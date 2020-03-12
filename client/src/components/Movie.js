@@ -5,22 +5,19 @@ import { useParams } from 'react-router-dom'
 export default function Movie(props) {
     const id = useParams().id;
     console.log(id)
-    let localStorageData;
-    let movie;
     // console.log('id:   ' + id);
     useEffect(() => {
-        localStorageData = JSON.parse(localStorage.getItem('popularMoviesData'));
-        movie = localStorageData.find(item => item.id == id);
+        // localStorageData = JSON.parse(localStorage.getItem('popularMoviesData'));
 
         return () => console.log('unmounting...');
-    }, [movie])
+    }, [])
+    const popularMoviesData = JSON.parse(localStorage.getItem('popularMoviesData'))
+    const movie = popularMoviesData.find(item => item.id == id);
 
     // console.log(movie.title)
     return (
         <div className="movie">
-            {/* <h1>NAME: {movie.title}</h1> */}
-            {console.log(movie)}
-            <h1>NAME:</h1>
+            <h1>NAME: {movie.title}</h1>
         </div>
     )
 }
