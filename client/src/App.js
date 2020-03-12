@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Home from './components/Home.js'
-import Header from './components/Header'
+import Movie from './components/Movie'
 import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom'
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
     <Router>
       <Switch>
         <Route path="/" exact component={Home}></Route>
-        {/* <Route path="/" exact component={Home}></Route> */}
+        <Route path="/movies/:id" exact component={Movie}></Route>
         {/* <Route path="/" exact component={Home}></Route> */}
       </Switch>
     </Router>

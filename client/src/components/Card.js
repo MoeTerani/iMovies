@@ -11,7 +11,7 @@ export default function Card(props) {
     return (
         <div className="card" style={cardStyle}>
 
-            <NavLink to="/:id">
+            <NavLink to={`movies/${props.cardInfo.id}`}>
                 <img src={'https://image.tmdb.org/t/p/w500' + props.cardInfo.poster_path}></img>
             </NavLink>
 
