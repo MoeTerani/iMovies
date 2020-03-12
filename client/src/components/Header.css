@@ -1,4 +1,17 @@
-.header{
-    margin: 0;
-    background-color: black;
+.header {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  background-color: black;
+}
+#header__img {
+  width: 60px;
+  margin: 10px 10px 10px 30px;
+}
+
+.header__title {
+  margin-right: 30px;
+  color: white;
 }
