@@ -3,6 +3,7 @@ import './Card.css'
 import { NavLink } from 'react-router-dom';
 
 export default function Card(props) {
+    // console.log(`movies/${props.cardInfo.id}`)
     const cardStyle = {
         color: 'blue',
         // backgroundImage: 'url(' + 'https://image.tmdb.org/t/p/w500' + props.cardInfo.poster_path + ')',

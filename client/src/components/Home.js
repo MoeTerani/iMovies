@@ -6,10 +6,11 @@ import Search from './Search'
 import Card from './Card'
 import axios from 'axios'
 
-export default function Home() {
-  // const [inputValue, setInputValue] = useState('');
-  const [popularMoviesData, setPopularMoviesData] = useState([])
 
+
+export default function Home(props) {
+  // const [inputValue, setInputValue] = useState('');
+  // const [popularMoviesData, setPopularMoviesData] = useState([])
   useEffect(() => {
     // This gets called on mount and when buttonClicked changes
     const fetchData = async () => {
@@ -17,9 +18,8 @@ export default function Home() {
         const data = await axios.get('http://localhost:8080/api/v1/popularmovies')
 
         // console.log(popularMoviesData);
-        console.log(data.data.results);
-        setPopularMoviesData(data.data.results)
-        console.log(popularMoviesData)
+        // console.log(data.data.results);
+        props.setPopularMoviesData(data.data.results)
       } catch (error) {
         console.error(error);
       }
@@ -46,7 +46,7 @@ export default function Home() {
     return cards
   }
 
-  const popularMovies = popularMoviesData ? renderCard(popularMoviesData) : null;
+  const popularMovies = props.popularMoviesData ? renderCard(props.popularMoviesData) : null;
   return (
     <div className="home" >
       <Header />
@@ -59,7 +59,10 @@ export default function Home() {
     </div >
   )
 }
-
+type props = {
+  popularMoviesData: any,
+  setPopularMoviesData: any
+}
 
 // export default class Home extends Component {
 //   constructor() {
