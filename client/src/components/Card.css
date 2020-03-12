@@ -1,7 +1,20 @@
 img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
     transition: all 0.3s ease 0s;
     border-radius: 20px;
+}
+
+
+.card{
+    overflow: hidden;
+    margin: 20px;;
+    width: 300px;
+    height: 400px;
+}
+.card__container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }

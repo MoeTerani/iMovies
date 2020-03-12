@@ -52,7 +52,10 @@ export default function Home() {
       <Header />
       <Hero />
       <Search />
-      {popularMovies}
+      <div className="card__container">
+        {popularMovies}
+
+      </div>
     </div >
   )
 }
