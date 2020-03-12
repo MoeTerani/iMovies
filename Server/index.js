@@ -5,17 +5,15 @@ const express = require('express');
 // const compression = require('compression');
 const cors = require('cors');
 
-
 // Start express app
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use('/api', require('./routes/api'));
 
 
 //  ROUTES
-app.use('/', () => {
-    console.log('HEllo from root')
-});
+
 
 module.exports = app;
