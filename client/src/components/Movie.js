@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom'
 
 export default function Movie(props) {
     const id = useParams().id;
-    console.log(id)
     // console.log('id:   ' + id);
     useEffect(() => {
         // localStorageData = JSON.parse(localStorage.getItem('popularMoviesData'));
