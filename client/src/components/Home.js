@@ -8,26 +8,28 @@ import axios from 'axios'
 
 
 
-export default function Home(props) {
+export default function Home() {
   // const [inputValue, setInputValue] = useState('');
   // const [popularMoviesData, setPopularMoviesData] = useState([])
   useEffect(() => {
     // This gets called on mount and when buttonClicked changes
-    const fetchData = async () => {
-      try {
-        const data = await axios.get('http://localhost:8080/api/v1/popularmovies')
+    // const fetchData = async () => {
+    //   try {
+    //     const data = await axios.get('http://localhost:8080/api/v1/popularmovies')
 
-        // console.log(popularMoviesData);
-        // console.log(data.data.results);
-        props.setPopularMoviesData(data.data.results)
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    fetchData();
+    //     // console.log(popularMoviesData);
+    //     // console.log(data.data.results);
+    //     props.setPopularMoviesData(data.data.results)
+    //   } catch (error) {
+    //     console.error(error);
+    //   }
+    // }
+    // fetchData();
+
     return () => console.log('unmounting...');
   }, [])
 
+  const popularMoviesData = JSON.parse(localStorage.getItem('popularMoviesData'))
 
   // async function fetchData() {
   //   try {
@@ -46,7 +48,7 @@ export default function Home(props) {
     return cards
   }
 
-  const popularMovies = props.popularMoviesData ? renderCard(props.popularMoviesData) : null;
+  const popularMovies = popularMoviesData ? renderCard(popularMoviesData) : null;
   return (
     <div className="home" >
       <Header />
@@ -59,10 +61,7 @@ export default function Home(props) {
     </div >
   )
 }
-type props = {
-  popularMoviesData: any,
-  setPopularMoviesData: any
-}
+
 
 // export default class Home extends Component {
 //   constructor() {

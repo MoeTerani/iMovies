@@ -3,23 +3,23 @@ import './Movie.css'
 import { useParams } from 'react-router-dom'
 
 export default function Movie(props) {
-    const [movie, setmovie] = useState()
     const id = useParams().id;
-
+    console.log(id)
+    let localStorageData;
+    let movie;
     // console.log('id:   ' + id);
     useEffect(() => {
-        const localStorageData = JSON.parse(localStorage.getItem('popularMoviesData'));
-        const movieData = localStorageData.find(item => item.id == id);
-        console.log(movieData)
-        setmovie(movieData)
+        localStorageData = JSON.parse(localStorage.getItem('popularMoviesData'));
+        movie = localStorageData.find(item => item.id == id);
 
         return () => console.log('unmounting...');
-    }, [])
+    }, [movie])
 
     // console.log(movie.title)
     return (
         <div className="movie">
             {/* <h1>NAME: {movie.title}</h1> */}
+            {console.log(movie)}
             <h1>NAME:</h1>
         </div>
     )
