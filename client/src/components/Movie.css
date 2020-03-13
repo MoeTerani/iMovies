@@ -1,4 +1,7 @@
-.movie{
-
-    background-color: lightcoral    ;
+.movie {
+  color: #fff;
+  background-color: black;
+}
+.movie__popularity {
+  text-align: center;
 }

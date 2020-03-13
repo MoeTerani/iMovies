@@ -15,9 +15,20 @@ router.get('/v1/popularmovies', async (req, res) => {
     `${API_URL}discover/movie?sort_by=popularity.desc&api_key=${API_KEY}`
   );
   // const data = await axios.get('http://www.omdbapi.com/?t=avatar&apikey=7ff2f65c')
-  //   console.log(data.data);
+  // console.log(data.data);
 
   res.status(200).send(data.data);
+});
+
+router.get('/v1/movie/:id', async (req, res) => {
+  console.log(req.params.id);
+  const data = await axios.get(
+    `https://api.themoviedb.org/3/movie/${req.params.id}?api_key=82d7ebf7637021b4afbf018847fd5a33&append_to_response=credits
+    `
+  );
+  // const data = await axios.get('http://www.omdbapi.com/?t=avatar&apikey=7ff2f65c')
+
+  res.status(200).send(JSON.stringify(data.data));
 });
 
 router.get('/v1/:search', async (req, res) => {

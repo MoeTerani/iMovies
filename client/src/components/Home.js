@@ -71,14 +71,15 @@ export default class Home extends Component {
       <div className='home'>
         <Header />
         <Hero heroData={heroData} />
-        <form className='form' onSubmit={this.handleSubmit}>
+        <h1>Most popular Movies</h1>
+        {/* <form className='form' onSubmit={this.handleSubmit}>
           <input
             type='text'
             value={this.inputValue}
             onChange={this.handleChange}
           />
           <input type='submit' value='Submit' />
-        </form>
+        </form> */}
         <div className='card__container'>{popularMovies}</div>
       </div>
     );

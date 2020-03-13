@@ -3,6 +3,8 @@ import './App.css';
 import Home from './components/Home.js';
 import Movie from './components/Movie';
 import axios from 'axios';
+
+import MovieDetail from './components/MovieDetails';
 import {
   BrowserRouter as Router,
   Switch,
@@ -61,7 +63,7 @@ class App extends Component {
             path='/movies/:id'
             exact
             render={props => (
-              <Movie
+              <MovieDetail
                 popularMoviesData={this.state.popularMoviesData}
                 {...props}
               />
